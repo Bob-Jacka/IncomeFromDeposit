@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Income from deposit</string>
+    <string name="EnterMoney">Enter your money here</string>
+    <string name="MonthlyDeposit">Monthly</string>
+    <string name="TwoMonthsDepost">Two months</string>
+    <string name="SixMonthsDeposit">Six months</string>
+    <string name="TwelveMonthsDeposit">Twelve months</string>
+    <string name="Count">Count income</string>
+    <string name="EnterBankRate">Enter bank rate here</string>
+    <string name="YourMoneyIncome">Your money income</string>
+    <string name="TwentyFourMonths">Twenty four months</string>
+    <string name="ThirtySixMonths">Thirty six months</string>
+    <string name="FillForm">Please fill out the form</string>
+    <string name="ChooseDepositDuration">Choose deposit duration</string>
+    <string name="Capitalization">Procent capitalization?</string>
+
+</resources>

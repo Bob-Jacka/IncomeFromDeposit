@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Income from deposit</string>
+    <string name="EnterMoney">Введите сюда свои деньги</string>
+    <string name="MonthlyDeposit">На месяц</string>
+    <string name="TwoMonthsDepost">Два месяца</string>
+    <string name="SixMonthsDeposit">Шесть месяцев</string>
+    <string name="TwelveMonthsDeposit">Двенадцать месяцев</string>
+    <string name="Count">Подсчитать доход</string>
+    <string name="EnterBankRate">Введите ставку банка сюда</string>
+    <string name="YourMoneyIncome">"Ваш доход "</string>
+    <string name="TwentyFourMonths">Двадцать четыре месяца</string>
+    <string name="ThirtySixMonths">Тридцать шесть месяцев</string>
+    <string name="FillForm">Пожалуйста, заполните форму</string>
+    <string name="ChooseDepositDuration">Выберите продолжительность депозита</string>
+    <string name="Capitalization">Капитализация процентов?</string>
+</resources>
