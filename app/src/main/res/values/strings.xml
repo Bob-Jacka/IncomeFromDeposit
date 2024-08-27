@@ -13,5 +13,6 @@
     <string name="FillForm">Please fill out the form</string>
     <string name="ChooseDepositDuration">Choose deposit duration</string>
     <string name="Capitalization">Procent capitalization?</string>
+    <string name="Reset">Reset values</string>
 
 </resources>

@@ -11,21 +11,34 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Switch
-            android:id="@+id/Capitalization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Capitalization"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/Capitalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Capitalization"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="resetParams"
+                android:text="@string/Reset" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
+            android:onClick="onClick1"
             android:text="@string/MonthlyDeposit"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
@@ -101,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
+            android:onClick="onClick1"
             android:text="@string/TwoMonthsDepost"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
@@ -111,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
+            android:onClick="onClick1"
             android:text="@string/SixMonthsDeposit"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
@@ -121,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
+            android:onClick="onClick1"
             android:text="@string/TwelveMonthsDeposit"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
@@ -131,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
+            android:onClick="onClick1"
             android:text="@string/TwentyFourMonths"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
@@ -141,7 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
+            android:onClick="onClick1"
             android:text="@string/ThirtySixMonths"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
@@ -151,7 +164,7 @@
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="getSetIncomeMethod"
+        android:onClick="onClick2"
         android:text="@string/Count"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

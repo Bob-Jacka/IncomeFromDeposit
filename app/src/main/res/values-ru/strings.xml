@@ -14,4 +14,5 @@
     <string name="FillForm">Пожалуйста, заполните форму</string>
     <string name="ChooseDepositDuration">Выберите продолжительность депозита</string>
     <string name="Capitalization">Капитализация процентов?</string>
+    <string name="Reset">Обнулить значения</string>
 </resources>
