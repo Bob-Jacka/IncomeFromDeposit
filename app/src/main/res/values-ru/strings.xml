@@ -15,4 +15,5 @@
     <string name="ChooseDepositDuration">Выберите продолжительность депозита</string>
     <string name="Capitalization">Капитализация процентов?</string>
     <string name="Reset">Обнулить значения</string>
+    <string name="ThreeMonths">Три месяца</string>
 </resources>

@@ -4,6 +4,7 @@ enum class Deposits(val number: Double) {
 
     Monthly(0.08333333333), // 1/12
     Two_Months(0.16666666666), // 2/12
+    Three_Months(0.25), // 3/12
     Six_Months(0.5),
     Twelve_Months(1.0),
     TwentyFour_Months(2.0),

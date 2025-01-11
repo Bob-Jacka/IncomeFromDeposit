@@ -5,24 +5,41 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import kotlin.properties.Delegates
+
+typealias boolean = Boolean
+typealias double = Double
 
 class MainActivity : ComponentActivity() {
 
+    private val tax: double = 0.13
     private var depositRateForYear = 0.0
-    private var sum: Double = 0.0
-    private var income: Double = 0.0
+    private var sum: double = 0.0
+    private var income: double = 0.0
+
+    private val depositMap: Map<Int, Deposits> = mapOf(
+        0 to Deposits.Monthly, // 1/12
+        1 to Deposits.Two_Months, // 2/12
+        2 to Deposits.Three_Months, // 3/12
+        3 to Deposits.Six_Months,
+        4 to Deposits.Twelve_Months,
+        5 to Deposits.TwentyFour_Months,
+        6 to Deposits.ThirtySix_Months
+    )
 
     private lateinit var moneyHere: TextView
     private lateinit var enteredMoney: EditText
     private lateinit var bankRate: EditText
+    private lateinit var howLongDeposit: LinearLayout
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private lateinit var isCapitalization: Switch
-    private lateinit var deposit: Deposits
+    private var depositVal by Delegates.notNull<double>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,21 +52,23 @@ class MainActivity : ComponentActivity() {
         bankRate = findViewById(R.id.bankRate)
         isCapitalization = findViewById(R.id.Capitalization)
         moneyHere = findViewById(R.id.MoneyHere)
+        howLongDeposit = findViewById(R.id.HowLongDeposit)
     }
 
     fun onClick1(v: View) {
-        deposit = Deposits.valueOf((v as Button).text.toString())
+        val whichView = howLongDeposit.indexOfChild(v as Button)
+        depositVal = depositMap[whichView]!!.number
     }
 
-    fun onClick2(v: View): Unit {
-        setIncome(deposit)
+    fun onClick2(v: View) {
+        setIncome(depositVal)
     }
 
-    private fun setIncome(deposit: Deposits) {
+    private fun setIncome(deposit: double) {
         depositRateForYear = bankRate.text.toString().toDouble()
         income = enteredMoney.text.toString().toDouble()
         if (numCheck()) {
-            if (isCapitalization.isActivated && deposit.depositDuration() >= 1) {
+            if (isCapitalization.isActivated && deposit >= 1.0) {
                 capitalization(deposit)
             } else {
                 nonCapitalization(deposit)
@@ -57,7 +76,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun numCheck(): Boolean {
+    private fun numCheck(): boolean {
         if (income != 0.0 && depositRateForYear != 0.0) {
             return true
         } else {
@@ -66,17 +85,22 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun nonCapitalization(deposit: Deposits) {
-        sum = income + ((income / 100) * (depositRateForYear * deposit.depositDuration()))
+    private fun nonCapitalization(deposit: double) {
+        val earned = (income + ((income / 100.0) * (depositRateForYear * deposit))) - income
+        val taxed = earned - (earned * tax)
+        sum = income + taxed
         getSubstring()
     }
 
-    private fun capitalization(deposit: Deposits) {
+    private fun capitalization(deposit: double) {
         sum = income
-        val duration = deposit.depositDuration().toInt() * 12
+        val duration = deposit.toInt() * 12
         for (i in 0 until duration) {
-            sum += (income / 100) * (depositRateForYear * deposit.depositDuration())
+            sum += (income / 100.0) * (depositRateForYear * deposit)
         }
+        val earned = income - (income + ((income / 100.0) * (depositRateForYear * deposit)))
+        val taxed = earned - (earned * tax)
+        sum = income + (earned - taxed)
         getSubstring()
     }
 

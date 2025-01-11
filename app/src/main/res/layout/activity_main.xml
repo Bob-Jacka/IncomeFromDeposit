@@ -88,9 +88,7 @@
     <LinearLayout
         android:id="@+id/HowLongDeposit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="60dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,6 +114,16 @@
             android:layout_weight="1"
             android:onClick="onClick1"
             android:text="@string/TwoMonthsDepost"
+            android:textSize="16sp"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/ThreeMonths"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick1"
+            android:text="@string/ThreeMonths"
             android:textSize="16sp"
             app:cornerRadius="0dp" />
 
@@ -159,6 +167,7 @@
             android:textSize="16sp"
             app:cornerRadius="0dp" />
     </LinearLayout>
+
 
     <Button
         android:id="@+id/button"

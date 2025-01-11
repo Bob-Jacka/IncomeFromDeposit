@@ -14,5 +14,6 @@
     <string name="ChooseDepositDuration">Choose deposit duration</string>
     <string name="Capitalization">Procent capitalization?</string>
     <string name="Reset">Reset values</string>
+    <string name="ThreeMonths">Three months</string>
 
 </resources>
